@@ -5,8 +5,9 @@
 
   :host {
     font-family: poppins;
-    font-size: 14px;
+    font-size: 10px;
     color: #333;
+    background-color: #eeeeee;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,7 +22,8 @@
   }
 
   p {
-    margin: 0;
+    margin: 5px;
+    color: lightgray;
   }
 
   .spacer {
@@ -29,6 +31,11 @@
   }
 
   .first{
+    background-color:rgb(240, 240, 240);
+    padding-bottom:40px;
+  }
+  .second{
+    
     background-color:rgb(248, 244, 244);
   }
 
@@ -79,10 +86,16 @@
     justify-content: center;
   }
 
+
   .toolbar img {
     margin: 0 16px;
     width: 180px !important;
     height: 70px !important;
+  }
+  .seemore{
+    margin: 0;
+    position: absolute;
+    margin-left: 35%;
   }
 
   .imgusr{
@@ -131,6 +144,26 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 16px;
+  }
+
+  .latestpodcasts{
+    background-color: white;
+    padding: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    flex-direction: column;
+    align-items: center; 
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    position: relative;
+    top: -35px;
+    z-index: 10;
+  }
+  .pdcstimage{
+    width: 100%;
+    margin: 10px;
   }
 
   .card {

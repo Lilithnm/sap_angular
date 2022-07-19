@@ -29,12 +29,10 @@
   }
 
   .toolbar {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 200px;
-    display: flex;
     align-items: center;
     font-weight: 600;
     margin-left: 15%;
@@ -43,12 +41,19 @@
     .red{
         color: #F13C45 !important;
     }
+    .mat-raised-button{
+        background-color:  #F13C45 !important;
+        color: white !important;
+    }
     .blue{
         color:  #0B2342 !important;
     }
+    .mat-stroked-button:not(.mat-button-disabled){
+        border-color:  #F13C45 !important;
+    }
 
   .head-buttons{
-    width: 200px;
+    width: 100px;
     margin: 10px;
   }
 
@@ -85,8 +90,6 @@
   }
 
   .content {
-    display: flex;
-    margin-top: 200px;
     margin-left: 10%;
     margin-right: 10%;
     padding: 0 16px;

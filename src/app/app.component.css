@@ -5,24 +5,18 @@
 
   :host {
     font-family: poppins;
-    font-size: 10px;
+    font-size: 11px;
     color: #333;
     background-color: #eeeeee;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
+ 
   p {
     margin: 5px;
-    color: lightgray;
+    color: #888;
   }
-
+.cont{
+    margin:5%
+}
   .spacer {
     flex: 1;
   }
@@ -70,6 +64,7 @@
   .navbar > a{
     color:  lightgrey !important;
     margin: 5px;
+    font-size: 14px
   }
   .navbar>a:hover { 
     color: #F13C45 !important; 
@@ -163,11 +158,23 @@
     border-left-color: #F13C45 !important;
     border-left: 2px solid;
 }
-.bloglist{
+.bloglistgallery{
     padding: 5%;
     margin-left: 10%;
     margin-right: 10%;
     flex-direction: column;
+    align-items: center; 
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    position: relative;
+}
+
+.contact{
+    flex-direction: column;
+    padding-right: 20%;
+    padding-left: 20%;
     align-items: center; 
     top: 0;
     left: 0;

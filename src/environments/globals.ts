@@ -1,1 +1,1 @@
-const Server = "http://localhost/wordpress/wp-json/wp/v2/";
+export const Server = "http://localhost//wordpress/wp-json/wp/v2/";

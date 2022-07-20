@@ -11,6 +11,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 
 
+import { StoreModule } from '@ngrx/store';
+import { podcastReducer } from './store/reducers/podcast';
+
+import { EffectsModule } from '@ngrx/effects';
+import { PodcastsEffect } from './store/effects/podcasts';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +28,11 @@ import {MatDividerModule} from '@angular/material/divider';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule, 
+    StoreModule.forRoot({}), 
+    EffectsModule.forRoot(), 
+    StoreModule.forFeature('myPodcasts', podcastReducer),
+    EffectsModule.forFeature([PodcastsEffect])
   ],
   providers: [],
   bootstrap: [AppComponent]

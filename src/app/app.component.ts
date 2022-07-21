@@ -7,6 +7,8 @@ import { invokePodcastsAPI } from './store/actions/podcasts';
 import { selectPodcasts } from './store/selectors/podcast';
 import { selectBlogPosts } from './store/selectors/blogposts';
 import { invokeBlogPostsAPI } from './store/actions/blogposts';
+import { selectMenu } from './store/selectors/menu';
+import { invokeMenuAPI } from './store/actions/menu';
 
 
 @Component({
@@ -23,9 +25,11 @@ export class AppComponent {
  
   podcastsLst$ = this.store.pipe(select(selectPodcasts));
   blogPostsLst$ = this.store.pipe(select(selectBlogPosts));
+  menuLst$ = this.store.pipe(select(selectMenu));
   ngOnInit(): void {
     this.store.dispatch(invokePodcastsAPI());
     this.store.dispatch(invokeBlogPostsAPI());
+    this.store.dispatch(invokeMenuAPI());
 
   }
 /*

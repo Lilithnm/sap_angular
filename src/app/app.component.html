@@ -3,12 +3,8 @@
     <div class="col-md-3">
       <img alt="nicasource Logo" src="../assets/images/nicasource.png"  />
     </div>
-    <div class="navbar col-md-5">
-      <a href="">Home</a>
-      <a href="">About</a>
-      <a href="">Episodes</a>
-      <a href="">Blog</a>
-      <a href="">Contact</a>
+    <div class="navbar col-md-5" >
+      <a href=""  *ngFor="let menuItem of menuLst$ | async">{{menuItem.title.rendered}}</a>
     </div>
       <div class="col-md-4">
         <button mat-raised-button class="head-buttons">Subscribe</button>
@@ -136,19 +132,15 @@
     </div>
   </div>
   <div class="bloglistgallery">
-    <div class="row">
-      <div class="col-md">
-        <img src="../assets/images/xmpl.png" alt="" width="100%">  
-      </div>
-      <div class="col-md">
-        <img src="../assets/images/xmpl.png" alt="" width="100%">  
-      </div>
-      <div class="col-md">
-        <img src="../assets/images/xmpl.png" alt="" width="100%">  
-      </div>
-      <div class="col-md">
-        <img src="../assets/images/xmpl.png" alt="" width="100%">  
-      </div>
+    <div class="row center">
+      <ngb-carousel >
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img src="../assets/images/xmpl.png" alt="Random first slide">
+          </div>
+        </ng-template>
+        
+      </ngb-carousel>
   
     </div>
   </div>
@@ -207,17 +199,8 @@
       <div class="row">
         <div class="col-6">
           <div class="row">
-            <div class="col-12">
-              <p>About</p>
-            </div>
-            <div class="col-12">
-              <p>Episodes</p>
-            </div>
-            <div class="col-12">
-              <p>Blog</p>
-            </div>
-            <div class="col-12">
-              <p>Contact</p>
+            <div class="col-12"  *ngFor="let menuItem of menuLst$ | async">
+              <p>{{menuItem.title.rendered}}</p>
             </div>
           </div>
         </div>

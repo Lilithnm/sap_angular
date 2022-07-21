@@ -18,6 +18,8 @@ import { blogpostReducer } from './store/reducers/blogposts';
 import { EffectsModule } from '@ngrx/effects';
 import { PodcastsEffect } from './store/effects/podcasts';
 import { BlogPostsEffect } from './store/effects/blogposts';
+import { menuReducer } from './store/reducers/menu';
+import { MenuEffect } from './store/effects/menu';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { BlogPostsEffect } from './store/effects/blogposts';
     EffectsModule.forRoot(), 
     StoreModule.forFeature('myPodcasts', podcastReducer),
     StoreModule.forFeature('myBlogPosts', blogpostReducer),
-    EffectsModule.forFeature([PodcastsEffect, BlogPostsEffect])
+    StoreModule.forFeature('myMenu', menuReducer),
+    EffectsModule.forFeature([PodcastsEffect, BlogPostsEffect, MenuEffect])
   ],
   providers: [],
   bootstrap: [AppComponent]

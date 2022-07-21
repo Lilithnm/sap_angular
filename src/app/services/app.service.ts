@@ -7,6 +7,7 @@ import { map, catchError } from 'rxjs/operators';
 import { Server } from '../../environments/globals';
 import { Podcast } from '../store/interfaces/podcast.interface';
 import { BlogPost } from '../store/interfaces/blogposts.interface';
+import { Menu } from '../store/interfaces/menu.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +21,9 @@ export class AppService {
 
   getBlogPosts() {
     return this.http.get<BlogPost[]>(Server+'posts');
+  }
+  getMenu() {
+    return this.http.get<Menu[]>(Server+'menu');
   }
 
 }

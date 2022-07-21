@@ -51,6 +51,7 @@ export class AppComponent {
       this.invalid=true;
     }
     else{
+      this.invalid=false;
 
     }
   }

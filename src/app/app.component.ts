@@ -11,6 +11,7 @@ import { selectMenu } from './store/selectors/menu';
 import { invokeMenuAPI } from './store/actions/menu';
 import { selecthomePage } from './store/selectors/pages';
 import { invokehomePageAPI } from './store/actions/page';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -21,7 +22,15 @@ import { invokehomePageAPI } from './store/actions/page';
 
 
 export class AppComponent {
+  
+  subscribeForm: FormGroup;
+
+    invalid = false;
   constructor(private store: Store) {
+    this.subscribeForm = new FormGroup({
+      email: new FormControl(null, [ Validators.required,  Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) ])
+    });
+      
   }
  
   podcastsLst$ = this.store.pipe(select(selectPodcasts));
@@ -37,5 +46,12 @@ export class AppComponent {
   }
 
 
-  
+  subsc(){
+    if(this.subscribeForm.invalid){
+      this.invalid=true;
+    }
+    else{
+
+    }
+  }
 }

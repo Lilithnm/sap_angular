@@ -5,7 +5,19 @@
   a{
     color: white;
   }
+.container2{
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  position: absolute;
+}
 
+.error{
+  color: red;
+  font-size: 8px;
+}
   :host {
     font-family: poppins;
     font-size: 11px;

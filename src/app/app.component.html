@@ -1,4 +1,4 @@
-<div  *ngFor="let pageData of homePageData$ | async">
+<div  *ngFor="let pageData of homePageData$ | async" class="container2">
   <div class="first" >
     <div class="toolbar row" role="banner">
       <div class="col-md-3">
@@ -7,7 +7,7 @@
       <div class="navbar col-md-5" >
         <a href=""  *ngFor="let menuItem of menuLst$ | async">{{menuItem.title.rendered}}</a>
       </div>
-        <div class="col-md-4">
+        <div class="col-md-4 center">
           <button mat-raised-button class="head-buttons">Subscribe</button>
           <button mat-stroked-button class="red head-buttons">Sign-In</button>
         </div>
@@ -155,10 +155,18 @@
         <p>{{pageData.acf.final_section_text}}</p>
       </div>
       <div class="row center" >
-        <div class="input-group">
-            <input type="text" class="form-control" ng-model="monitor.query" placeholder="Type your Email" aria-describedby="addon">
-            <button mat-raised-button >Subscribe</button>
-        </div>
+        <form [formGroup]="subscribeForm">
+          <div class="container">
+              
+              <div class="row">
+                  <div class="input-group" id="inputgr">
+                    <input type="text" formControlName="email" name="email"  class="form-control" ng-model="monitor.query" placeholder="Type your Email" aria-describedby="addon">
+                    <button type="button" mat-raised-button (click)="subsc()">Subscribe</button>
+                </div>
+                <label for="inputgr" *ngIf="this.invalid" class="error">The email format is incorrect</label>
+              </div>
+          </div> 
+        </form>
         
     </div>
       

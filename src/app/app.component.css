@@ -2,6 +2,9 @@
     font-family: poppins;
     src: url(../assets/fonts/poppins/Poppins-Medium.ttf) format("opentype");
   }
+  a{
+    color: white;
+  }
 
   :host {
     font-family: poppins;

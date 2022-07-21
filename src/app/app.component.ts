@@ -9,6 +9,8 @@ import { selectBlogPosts } from './store/selectors/blogposts';
 import { invokeBlogPostsAPI } from './store/actions/blogposts';
 import { selectMenu } from './store/selectors/menu';
 import { invokeMenuAPI } from './store/actions/menu';
+import { selecthomePage } from './store/selectors/pages';
+import { invokehomePageAPI } from './store/actions/page';
 
 
 @Component({
@@ -19,25 +21,21 @@ import { invokeMenuAPI } from './store/actions/menu';
 
 
 export class AppComponent {
-
   constructor(private store: Store) {
   }
  
   podcastsLst$ = this.store.pipe(select(selectPodcasts));
   blogPostsLst$ = this.store.pipe(select(selectBlogPosts));
   menuLst$ = this.store.pipe(select(selectMenu));
+  homePageData$ = this.store.pipe(select(selecthomePage));
   ngOnInit(): void {
     this.store.dispatch(invokePodcastsAPI());
     this.store.dispatch(invokeBlogPostsAPI());
     this.store.dispatch(invokeMenuAPI());
+    this.store.dispatch(invokehomePageAPI());
 
   }
-/*
-  getPodcast(form: NgForm) {
-    this.store.dispatch(
-      new AddArticleAction(form.value)
-    );
-    form.reset();
-  }
-  */
+
+
+  
 }

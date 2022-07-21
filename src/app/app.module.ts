@@ -20,7 +20,8 @@ import { PodcastsEffect } from './store/effects/podcasts';
 import { BlogPostsEffect } from './store/effects/blogposts';
 import { menuReducer } from './store/reducers/menu';
 import { MenuEffect } from './store/effects/menu';
-
+import { homePageReducer } from './store/reducers/pages';
+import { PagesEffect } from './store/effects/pages';
 @NgModule({
   declarations: [
     AppComponent
@@ -38,7 +39,8 @@ import { MenuEffect } from './store/effects/menu';
     StoreModule.forFeature('myPodcasts', podcastReducer),
     StoreModule.forFeature('myBlogPosts', blogpostReducer),
     StoreModule.forFeature('myMenu', menuReducer),
-    EffectsModule.forFeature([PodcastsEffect, BlogPostsEffect, MenuEffect])
+    StoreModule.forFeature('myHomePage', homePageReducer),
+    EffectsModule.forFeature([PodcastsEffect, BlogPostsEffect, MenuEffect, PagesEffect])
   ],
   providers: [],
   bootstrap: [AppComponent]

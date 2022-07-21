@@ -10,3 +10,19 @@ export const podcastReducer = createReducer(
     return allPodcasts;
   })
 );
+
+export const podcastTrendingReducer = createReducer(
+  initialState,
+  on(podcastsFetchAPISuccess, (state, { allPodcasts }) => {
+
+    return allPodcasts;
+  })
+);
+
+export const podcastFirst3Reducer = createReducer(
+  initialState,
+  on(podcastsFetchAPISuccess, (state, { allPodcasts }) => {
+    
+    return allPodcasts;
+  })
+);

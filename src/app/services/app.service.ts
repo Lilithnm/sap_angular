@@ -8,6 +8,7 @@ import { Server } from '../../environments/globals';
 import { Podcast } from '../store/interfaces/podcast.interface';
 import { BlogPost } from '../store/interfaces/blogposts.interface';
 import { Menu } from '../store/interfaces/menu.interface';
+import { HomePage } from '../store/interfaces/pages.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +25,9 @@ export class AppService {
   }
   getMenu() {
     return this.http.get<Menu[]>(Server+'menu');
+  }
+  getPage(slug:string){
+    return this.http.get<HomePage>(Server+'pages/?slug='+slug);
   }
 
 }

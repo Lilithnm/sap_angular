@@ -14,4 +14,5 @@ interface PodcastAcf{
     season:number;
     category:string;
     posted_date: string;
+    episode_number: number;
 };

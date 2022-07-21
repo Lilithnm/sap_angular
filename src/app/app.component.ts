@@ -5,6 +5,8 @@ import { select, Store } from '@ngrx/store';
 
 import { invokePodcastsAPI } from './store/actions/podcasts';
 import { selectPodcasts } from './store/selectors/podcast';
+import { selectBlogPosts } from './store/selectors/blogposts';
+import { invokeBlogPostsAPI } from './store/actions/blogposts';
 
 
 @Component({
@@ -16,17 +18,15 @@ import { selectPodcasts } from './store/selectors/podcast';
 
 export class AppComponent {
 
-  podcasts$: Observable<Array<Podcast>>;
   constructor(private store: Store) {
-
   }
  
   podcastsLst$ = this.store.pipe(select(selectPodcasts));
+  blogPostsLst$ = this.store.pipe(select(selectBlogPosts));
   ngOnInit(): void {
     this.store.dispatch(invokePodcastsAPI());
+    this.store.dispatch(invokeBlogPostsAPI());
 
-    console.log(this.podcastsLst$)
-    
   }
 /*
   getPodcast(form: NgForm) {

@@ -13,9 +13,11 @@ import {MatDividerModule} from '@angular/material/divider';
 
 import { StoreModule } from '@ngrx/store';
 import { podcastReducer } from './store/reducers/podcast';
+import { blogpostReducer } from './store/reducers/blogposts';
 
 import { EffectsModule } from '@ngrx/effects';
 import { PodcastsEffect } from './store/effects/podcasts';
+import { BlogPostsEffect } from './store/effects/blogposts';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { PodcastsEffect } from './store/effects/podcasts';
     StoreModule.forRoot({}), 
     EffectsModule.forRoot(), 
     StoreModule.forFeature('myPodcasts', podcastReducer),
-    EffectsModule.forFeature([PodcastsEffect])
+    StoreModule.forFeature('myBlogPosts', blogpostReducer),
+    EffectsModule.forFeature([PodcastsEffect, BlogPostsEffect])
   ],
   providers: [],
   bootstrap: [AppComponent]

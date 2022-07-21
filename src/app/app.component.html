@@ -70,7 +70,8 @@
           <div class="col-md-8">
             <h4>{{podcast.title.rendered}}</h4>
             <br>
-            <p>{{podcast.content.rendered}}</p>
+            <div [innerHTML]="podcast.content.rendered"></div>
+
             <br>            
             <button mat-stroked-button class="red head-buttons">Know more</button>
           </div>
@@ -78,8 +79,8 @@
       </div>
       <div class="col-md-4">
         <p># Season {{podcast.acf.season}}</p>
-        <p># {{podcast.modified}}</p>
-        <p># {{podcast.acf.type}}</p>
+        <p># {{podcast.modified | date}}</p>
+        <p># {{podcast.acf.category}}</p>
       </div>
     </div>
 
@@ -98,54 +99,23 @@
   </div>
   <div class="bloglistgallery">
     <div class="row">
-      <div class="col md-3 blogs">
+      <div class="col md-3 blogs"  *ngFor="let post of blogPostsLst$ | async">
         <div class="row blogsrow blogsrowh">
-          <div class="col-md-12"> <span>By Mehedi Hasan</span><span>Sep 11, 2020</span></div>
-          <div class="col-md-12"> <span>NicaSource Radio</span></div>
+          <div class="col-md-12"> <span>By {{post.acf.author}}</span><span>{{post.modified  | date}}</span></div>
+          <div class="col-md-12"> <span>{{post.acf.producer}}</span></div>
          </div>
         <div class="row blogsrow">
-          <h5>Global News Podcast Thai soldier kills many</h5>
+          <h5>{{post.title.rendered}}</h5>
         </div>
         <div class="row blogsrow">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ..</p>
+          <div [innerHTML]="post.content.rendered"></div>
         </div>
         <div class="row blogsrow">
           <button mat-stroked-button class="red">Read more</button>
         </div>
   
       </div>
-      <div class="col md-3 blogs">
-        <div class="row blogsrow blogsrowh">
-          <div class="col-md-12"> <span>By Mehedi Hasan</span><span>Sep 11, 2020</span></div>
-          <div class="col-md-12"> <span>NicaSource Radio</span></div>
-         </div>
-        <div class="row blogsrow">
-          <h5>Global News Podcast Thai soldier kills many</h5>
-        </div>
-        <div class="row blogsrow">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ..</p>
-        </div>
-        <div class="row blogsrow">
-          <button mat-stroked-button class="red">Read more</button>
-        </div>
-  
-      </div>
-      <div class="col md-3 blogs">
-        <div class="row blogsrow blogsrowh">
-          <div class="col-md-12"> <span>By Mehedi Hasan</span><span>Sep 11, 2020</span></div>
-          <div class="col-md-12"> <span>NicaSource Radio</span></div>
-         </div>
-        <div class="row blogsrow">
-          <h5>Global News Podcast Thai soldier kills many</h5>
-        </div>
-        <div class="row blogsrow">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ..</p>
-        </div>
-        <div class="row blogsrow">
-          <button mat-stroked-button class="red">Read more</button>
-        </div>
-  
-      </div>
+
 
     </div>
   </div>

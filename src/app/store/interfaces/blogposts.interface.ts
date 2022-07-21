@@ -1,8 +1,8 @@
-export interface Podcast { 
+export interface BlogPost { 
     modified: string;
     title:Rendered;
     content:Rendered;
-    acf:PodcastAcf;
+    acf:Acf;
     featured_media:Object;
 };
 
@@ -10,8 +10,8 @@ interface Rendered{
     rendered: string;
 };
 
-interface PodcastAcf{
-    season:number;
-    category:string;
+interface Acf{
+    author:number;
+    producer:string;
     posted_date: string;
 };
